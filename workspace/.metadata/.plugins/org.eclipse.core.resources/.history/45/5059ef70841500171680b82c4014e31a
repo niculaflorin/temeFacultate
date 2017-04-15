@@ -1,0 +1,12 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean(name = "termo")
+@ViewScoped
+public class TermoDinamicaBean implements Serializable {
+
+}

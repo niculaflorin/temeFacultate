@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servicii.mds" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://servicii.mds" xmlns:intf="http://servicii.mds" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://servicii.mds" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="presiune">
+    <complexType>
+     <sequence>
+      <element name="n" type="xsd:double"/>
+      <element name="m" type="xsd:double"/>
+      <element name="v" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="presiuneResponse">
+    <complexType>
+     <sequence>
+      <element name="presiuneReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="gaz_ideal">
+    <complexType>
+     <sequence>
+      <element name="n" type="xsd:double"/>
+      <element name="k" type="xsd:double"/>
+      <element name="t" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="gaz_idealResponse">
+    <complexType>
+     <sequence>
+      <element name="gaz_idealReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="moli">
+    <complexType>
+     <sequence>
+      <element name="m" type="xsd:double"/>
+      <element name="miu" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="moliResponse">
+    <complexType>
+     <sequence>
+      <element name="moliReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="gaz_idealRequest">
+
+      <wsdl:part element="impl:gaz_ideal" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="gaz_idealResponse">
+
+      <wsdl:part element="impl:gaz_idealResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="moliResponse">
+
+      <wsdl:part element="impl:moliResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="presiuneRequest">
+
+      <wsdl:part element="impl:presiune" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="moliRequest">
+
+      <wsdl:part element="impl:moli" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="presiuneResponse">
+
+      <wsdl:part element="impl:presiuneResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TermoDinamica">
+
+      <wsdl:operation name="presiune">
+
+         <wsdl:input message="impl:presiuneRequest" name="presiuneRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:presiuneResponse" name="presiuneResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="gaz_ideal">
+
+         <wsdl:input message="impl:gaz_idealRequest" name="gaz_idealRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:gaz_idealResponse" name="gaz_idealResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="moli">
+
+         <wsdl:input message="impl:moliRequest" name="moliRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:moliResponse" name="moliResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TermoDinamicaSoapBinding" type="impl:TermoDinamica">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="presiune">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="presiuneRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="presiuneResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="gaz_ideal">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="gaz_idealRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="gaz_idealResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="moli">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="moliRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="moliResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TermoDinamicaService">
+
+      <wsdl:port binding="impl:TermoDinamicaSoapBinding" name="TermoDinamica">
+
+         <wsdlsoap:address location="http://localhost:8080/fizicianWS/services/TermoDinamica"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

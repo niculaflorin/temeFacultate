@@ -1,0 +1,12 @@
+package mds.servicii;
+
+public class TermoDinamica {
+	
+	/*
+	 * numarul de moli
+	 * masa / miu
+	 */
+	public double moli(double m, double miu) {
+		return m / miu;
+	}
+}

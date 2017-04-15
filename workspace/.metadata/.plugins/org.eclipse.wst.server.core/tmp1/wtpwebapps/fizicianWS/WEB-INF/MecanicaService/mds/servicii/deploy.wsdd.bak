@@ -1,0 +1,44 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MecanicaService WSDL service -->
+
+  <service name="Mecanica" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://servicii.mds"/>
+      <parameter name="wsdlServiceElement" value="MecanicaService"/>
+      <parameter name="schemaQualified" value="http://servicii.mds"/>
+      <parameter name="wsdlServicePort" value="Mecanica"/>
+      <parameter name="className" value="mds.servicii.MecanicaSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Mecanica"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getFortaElastica" qname="operNS:getFortaElastica" xmlns:operNS="http://servicii.mds" returnQName="retNS:getFortaElasticaReturn" xmlns:retNS="http://servicii.mds" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:k" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:x" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getForta" qname="operNS:getForta" xmlns:operNS="http://servicii.mds" returnQName="retNS:getFortaReturn" xmlns:retNS="http://servicii.mds" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:masa" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:acc" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getFortaFrecare" qname="operNS:getFortaFrecare" xmlns:operNS="http://servicii.mds" returnQName="retNS:getFortaFrecareReturn" xmlns:retNS="http://servicii.mds" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:miu" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:masa" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:g" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getLucruMecanic" qname="operNS:getLucruMecanic" xmlns:operNS="http://servicii.mds" returnQName="retNS:getLucruMecanicReturn" xmlns:retNS="http://servicii.mds" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:forta" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:dist" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:x" xmlns:pns="http://servicii.mds" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getFortaElastica getLucruMecanic getFortaFrecare getForta"/>
+
+  </service>
+</deployment>

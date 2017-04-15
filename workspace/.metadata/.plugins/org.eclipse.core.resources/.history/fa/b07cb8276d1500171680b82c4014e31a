@@ -1,0 +1,72 @@
+package mds.servicii;
+
+public class MecanicaPortTypeProxy implements mds.servicii.MecanicaPortType {
+  private String _endpoint = null;
+  private mds.servicii.MecanicaPortType mecanicaPortType = null;
+  
+  public MecanicaPortTypeProxy() {
+    _initMecanicaPortTypeProxy();
+  }
+  
+  public MecanicaPortTypeProxy(String endpoint) {
+    _endpoint = endpoint;
+    _initMecanicaPortTypeProxy();
+  }
+  
+  private void _initMecanicaPortTypeProxy() {
+    try {
+      mecanicaPortType = (new mds.servicii.MecanicaLocator()).getMecanicaHttpSoap11Endpoint();
+      if (mecanicaPortType != null) {
+        if (_endpoint != null)
+          ((javax.xml.rpc.Stub)mecanicaPortType)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
+        else
+          _endpoint = (String)((javax.xml.rpc.Stub)mecanicaPortType)._getProperty("javax.xml.rpc.service.endpoint.address");
+      }
+      
+    }
+    catch (javax.xml.rpc.ServiceException serviceException) {}
+  }
+  
+  public String getEndpoint() {
+    return _endpoint;
+  }
+  
+  public void setEndpoint(String endpoint) {
+    _endpoint = endpoint;
+    if (mecanicaPortType != null)
+      ((javax.xml.rpc.Stub)mecanicaPortType)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
+    
+  }
+  
+  public mds.servicii.MecanicaPortType getMecanicaPortType() {
+    if (mecanicaPortType == null)
+      _initMecanicaPortTypeProxy();
+    return mecanicaPortType;
+  }
+  
+  public double getLucruMecanic(double forta, double dist, double x) throws java.rmi.RemoteException{
+    if (mecanicaPortType == null)
+      _initMecanicaPortTypeProxy();
+    return mecanicaPortType.getLucruMecanic(forta, dist, x);
+  }
+  
+  public double getFortaElastica(double k, double x) throws java.rmi.RemoteException{
+    if (mecanicaPortType == null)
+      _initMecanicaPortTypeProxy();
+    return mecanicaPortType.getFortaElastica(k, x);
+  }
+  
+  public double getFortaFrecare(double miu, double masa, double g) throws java.rmi.RemoteException{
+    if (mecanicaPortType == null)
+      _initMecanicaPortTypeProxy();
+    return mecanicaPortType.getFortaFrecare(miu, masa, g);
+  }
+  
+  public double getForta(double masa, double acc) throws java.rmi.RemoteException{
+    if (mecanicaPortType == null)
+      _initMecanicaPortTypeProxy();
+    return mecanicaPortType.getForta(masa, acc);
+  }
+  
+  
+}

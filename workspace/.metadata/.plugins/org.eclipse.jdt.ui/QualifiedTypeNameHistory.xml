@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="mds.servicii.Mecanica"/>
+<fullyQualifiedTypeName name="mds.servicii.Electricitate"/>
+<fullyQualifiedTypeName name="mds.servicii.ElectricitatePortType"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="mds.servicii.TermoDinamica"/>
+<fullyQualifiedTypeName name="mds.servicii.TermoDinamicaPortType"/>
+</qualifiedTypeNameHistroy>

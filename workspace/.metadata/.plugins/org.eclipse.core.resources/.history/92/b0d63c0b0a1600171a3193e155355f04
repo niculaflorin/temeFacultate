@@ -1,0 +1,106 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import mds.servicii.Electricitate;
+import mds.servicii.ElectricitatePortType;
+
+@ManagedBean(name = "electricitate")
+@ViewScoped
+public class ElectricitateBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6246430389853854210L;
+
+	Electricitate elec = new Electricitate();
+
+	ElectricitatePortType port = elec.getElectricitateHttpSoap11Endpoint();
+
+	private double l;
+
+	private double q;
+
+	private double u;
+
+	private double i;
+
+	private double tens;
+
+	private double rez;
+
+	private double putere;
+
+	public void tensiune() {
+		tens = port.tensiune(l, q);
+	}
+
+	public void rezistenta() {
+		rez = port.rezistenta(u, i);
+	}
+
+	public void putere() {
+		putere = port.putere(u, i);
+	}
+
+	public double getL() {
+		return l;
+	}
+
+	public void setL(double l) {
+		this.l = l;
+	}
+
+	public double getQ() {
+		return q;
+	}
+
+	public void setQ(double q) {
+		this.q = q;
+	}
+
+	public double getU() {
+		return u;
+	}
+
+	public void setU(double u) {
+		this.u = u;
+	}
+
+	public double getI() {
+		return i;
+	}
+
+	public void setI(double i) {
+		this.i = i;
+	}
+
+	public double getTens() {
+		return tens;
+	}
+
+	public void setTens(double tens) {
+		this.tens = tens;
+	}
+
+	public double getRez() {
+		return rez;
+	}
+
+	public void setRez(double rez) {
+		this.rez = rez;
+	}
+
+	public double getPutere() {
+		return putere;
+	}
+
+	public void setPutere(double putere) {
+		this.putere = putere;
+	}
+
+}

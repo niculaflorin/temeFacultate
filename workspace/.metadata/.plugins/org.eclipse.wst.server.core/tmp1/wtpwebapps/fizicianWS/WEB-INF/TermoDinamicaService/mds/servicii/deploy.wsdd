@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from TermoDinamicaService WSDL service -->
+
+  <service name="TermoDinamica" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://servicii.mds"/>
+      <parameter name="wsdlServiceElement" value="TermoDinamicaService"/>
+      <parameter name="schemaQualified" value="http://servicii.mds"/>
+      <parameter name="wsdlServicePort" value="TermoDinamica"/>
+      <parameter name="className" value="mds.servicii.TermoDinamica"/>
+      <parameter name="wsdlPortType" value="TermoDinamica"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://servicii.mds" xmlns:retNS="http://servicii.mds" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="presiune" qname="operNS:presiune" returnQName="retNS:presiuneReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:n" type="tns:double"/>
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:m" type="tns:double"/>
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:v" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://servicii.mds" xmlns:retNS="http://servicii.mds" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="gaz_ideal" qname="operNS:gaz_ideal" returnQName="retNS:gaz_idealReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:n" type="tns:double"/>
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:k" type="tns:double"/>
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:t" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://servicii.mds" xmlns:retNS="http://servicii.mds" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="moli" qname="operNS:moli" returnQName="retNS:moliReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:m" type="tns:double"/>
+        <parameter xmlns:pns="http://servicii.mds" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:miu" type="tns:double"/>
+      </operation>
+      <parameter name="allowedMethods" value="gaz_ideal presiune moli"/>
+
+  </service>
+</deployment>

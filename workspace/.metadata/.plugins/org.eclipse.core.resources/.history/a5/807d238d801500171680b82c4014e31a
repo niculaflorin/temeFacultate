@@ -1,0 +1,24 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import mds.servicii.Electricitate;
+import mds.servicii.ElectricitatePortType;
+
+@ManagedBean(name = "electricitate")
+@ViewScoped
+public class ElectricitateBean  implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6246430389853854210L;
+	
+	Electricitate elec = new Electricitate();
+	
+	ElectricitatePortType port = elec.getElectricitateHttpSoap11Endpoint();
+
+}

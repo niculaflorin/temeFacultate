@@ -1,0 +1,17 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean(name = "electricitate")
+@ViewScoped
+public class ElectricitateBean  implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6246430389853854210L;
+
+}

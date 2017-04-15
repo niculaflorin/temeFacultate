@@ -1,0 +1,15 @@
+/**
+ * MecanicaPortType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package mds.servicii;
+
+public interface MecanicaPortType extends java.rmi.Remote {
+    public double getLucruMecanic(double forta, double dist, double x) throws java.rmi.RemoteException;
+    public double getFortaElastica(double k, double x) throws java.rmi.RemoteException;
+    public double getFortaFrecare(double miu, double masa, double g) throws java.rmi.RemoteException;
+    public double getForta(double masa, double acc) throws java.rmi.RemoteException;
+}

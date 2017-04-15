@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servicii.mds" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://servicii.mds" xmlns:intf="http://servicii.mds" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://servicii.mds" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getFortaElastica">
+    <complexType>
+     <sequence>
+      <element name="k" type="xsd:double"/>
+      <element name="x" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFortaElasticaResponse">
+    <complexType>
+     <sequence>
+      <element name="getFortaElasticaReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getForta">
+    <complexType>
+     <sequence>
+      <element name="masa" type="xsd:double"/>
+      <element name="acc" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFortaResponse">
+    <complexType>
+     <sequence>
+      <element name="getFortaReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFortaFrecare">
+    <complexType>
+     <sequence>
+      <element name="miu" type="xsd:double"/>
+      <element name="masa" type="xsd:double"/>
+      <element name="g" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFortaFrecareResponse">
+    <complexType>
+     <sequence>
+      <element name="getFortaFrecareReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLucruMecanic">
+    <complexType>
+     <sequence>
+      <element name="forta" type="xsd:double"/>
+      <element name="dist" type="xsd:double"/>
+      <element name="x" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getLucruMecanicResponse">
+    <complexType>
+     <sequence>
+      <element name="getLucruMecanicReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getLucruMecanicRequest">
+
+      <wsdl:part element="impl:getLucruMecanic" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLucruMecanicResponse">
+
+      <wsdl:part element="impl:getLucruMecanicResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFortaRequest">
+
+      <wsdl:part element="impl:getForta" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFortaFrecareResponse">
+
+      <wsdl:part element="impl:getFortaFrecareResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFortaResponse">
+
+      <wsdl:part element="impl:getFortaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFortaElasticaRequest">
+
+      <wsdl:part element="impl:getFortaElastica" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFortaElasticaResponse">
+
+      <wsdl:part element="impl:getFortaElasticaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFortaFrecareRequest">
+
+      <wsdl:part element="impl:getFortaFrecare" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Mecanica">
+
+      <wsdl:operation name="getFortaElastica">
+
+         <wsdl:input message="impl:getFortaElasticaRequest" name="getFortaElasticaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFortaElasticaResponse" name="getFortaElasticaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getForta">
+
+         <wsdl:input message="impl:getFortaRequest" name="getFortaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFortaResponse" name="getFortaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFortaFrecare">
+
+         <wsdl:input message="impl:getFortaFrecareRequest" name="getFortaFrecareRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFortaFrecareResponse" name="getFortaFrecareResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLucruMecanic">
+
+         <wsdl:input message="impl:getLucruMecanicRequest" name="getLucruMecanicRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getLucruMecanicResponse" name="getLucruMecanicResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MecanicaSoapBinding" type="impl:Mecanica">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getFortaElastica">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFortaElasticaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFortaElasticaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getForta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFortaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFortaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFortaFrecare">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFortaFrecareRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFortaFrecareResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLucruMecanic">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLucruMecanicRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLucruMecanicResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MecanicaService">
+
+      <wsdl:port binding="impl:MecanicaSoapBinding" name="Mecanica">
+
+         <wsdlsoap:address location="http://localhost:8080/fizicianWS/services/Mecanica"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

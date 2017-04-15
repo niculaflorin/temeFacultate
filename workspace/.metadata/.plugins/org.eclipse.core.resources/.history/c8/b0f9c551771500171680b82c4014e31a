@@ -1,0 +1,58 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import mds.servicii.MecanicaPortType;
+
+@ManagedBean(name = "mecanica")
+@ViewScoped
+public class MecanicaBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -550396060199753172L;
+	
+	mds.servicii.Mecanica mec = new mds.servicii.Mecanica();
+	
+	MecanicaPortType port1 = mec.getMecanicaHttpSoap11Endpoint();
+	
+	
+	private double masa;
+	
+	private double accelaratia;
+	
+	private double forta = 0;
+	
+	public void calcForta() {
+		System.out.println("port " + port1.getForta(masa, accelaratia));
+		forta = port1.getForta(masa, accelaratia);
+	}
+
+	public double getMasa() {
+		return masa;
+	}
+
+	public void setMasa(double masa) {
+		this.masa = masa;
+	}
+
+	public double getAccelaratia() {
+		return accelaratia;
+	}
+
+	public void setAccelaratia(double accelaratia) {
+		this.accelaratia = accelaratia;
+	}
+
+	public double getForta() {
+		return forta;
+	}
+
+	public void setForta(double forta) {
+		this.forta = forta;
+	}
+}

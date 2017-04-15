@@ -1,0 +1,50 @@
+package mds.servicii.clientsample;
+
+import mds.servicii.*;
+
+public class ClientSample {
+
+	public static void main(String[] args) {
+	        System.out.println("***********************");
+	        System.out.println("Create Web Service Client...");
+	        Electricitate service1 = new Electricitate();
+	        System.out.println("Create Web Service...");
+	        ElectricitatePortType port1 = service1.getElectricitateHttpSoap11Endpoint();
+	        System.out.println("Call Web Service Operation...");
+	        System.out.println("Server said: " + port1.putere(Double.parseDouble(args[0]),Double.parseDouble(args[1])));
+	        System.out.println("Server said: " + port1.rezistenta(Double.parseDouble(args[2]),Double.parseDouble(args[3])));
+	        System.out.println("Server said: " + port1.tensiune(Double.parseDouble(args[4]),Double.parseDouble(args[5])));
+	        System.out.println("Create Web Service...");
+	        ElectricitatePortType port2 = service1.getElectricitateHttpSoap11Endpoint();
+	        System.out.println("Call Web Service Operation...");
+	        System.out.println("Server said: " + port2.putere(Double.parseDouble(args[6]),Double.parseDouble(args[7])));
+	        System.out.println("Server said: " + port2.rezistenta(Double.parseDouble(args[8]),Double.parseDouble(args[9])));
+	        System.out.println("Server said: " + port2.tensiune(Double.parseDouble(args[10]),Double.parseDouble(args[11])));
+	        System.out.println("Create Web Service...");
+	        ElectricitatePortType port3 = service1.getElectricitateHttpEndpoint();
+	        System.out.println("Call Web Service Operation...");
+	        System.out.println("Server said: " + port3.putere(Double.parseDouble(args[12]),Double.parseDouble(args[13])));
+	        System.out.println("Server said: " + port3.rezistenta(Double.parseDouble(args[14]),Double.parseDouble(args[15])));
+	        System.out.println("Server said: " + port3.tensiune(Double.parseDouble(args[16]),Double.parseDouble(args[17])));
+	        System.out.println("Create Web Service...");
+	        ElectricitatePortType port4 = service1.getElectricitateHttpEndpoint();
+	        System.out.println("Call Web Service Operation...");
+	        System.out.println("Server said: " + port4.putere(Double.parseDouble(args[18]),Double.parseDouble(args[19])));
+	        System.out.println("Server said: " + port4.rezistenta(Double.parseDouble(args[20]),Double.parseDouble(args[21])));
+	        System.out.println("Server said: " + port4.tensiune(Double.parseDouble(args[22]),Double.parseDouble(args[23])));
+	        System.out.println("Create Web Service...");
+	        ElectricitatePortType port5 = service1.getElectricitateHttpSoap12Endpoint();
+	        System.out.println("Call Web Service Operation...");
+	        System.out.println("Server said: " + port5.putere(Double.parseDouble(args[24]),Double.parseDouble(args[25])));
+	        System.out.println("Server said: " + port5.rezistenta(Double.parseDouble(args[26]),Double.parseDouble(args[27])));
+	        System.out.println("Server said: " + port5.tensiune(Double.parseDouble(args[28]),Double.parseDouble(args[29])));
+	        System.out.println("Create Web Service...");
+	        ElectricitatePortType port6 = service1.getElectricitateHttpSoap12Endpoint();
+	        System.out.println("Call Web Service Operation...");
+	        System.out.println("Server said: " + port6.putere(Double.parseDouble(args[30]),Double.parseDouble(args[31])));
+	        System.out.println("Server said: " + port6.rezistenta(Double.parseDouble(args[32]),Double.parseDouble(args[33])));
+	        System.out.println("Server said: " + port6.tensiune(Double.parseDouble(args[34]),Double.parseDouble(args[35])));
+	        System.out.println("***********************");
+	        System.out.println("Call Over!");
+	}
+}

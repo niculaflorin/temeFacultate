@@ -1,0 +1,26 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean(name = "mecanica")
+@ViewScoped
+public class Mecanica implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -550396060199753172L;
+
+	public String ceav = "asdas";
+
+	public String getCeav() {
+		return ceav;
+	}
+
+	public void setCeav(String ceav) {
+		this.ceav = ceav;
+	}
+}

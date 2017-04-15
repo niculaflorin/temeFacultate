@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body style="background-color: #8c8c8c">
+	<div class="col-md-12 col-md-offset-3 centralDiv">
+		<div class="row" style="text-align: center;">
+			<h:outputLabel value="Fizician" class="header" />
+		</div>
+		<h:form>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="L: " styleClass="col-md-1" />
+				<h:inputText value="#{electricitate.l}" styleClass="col-md-2" />
+				<h:outputLabel value="Q: " styleClass="col-md-2" />
+				<h:inputText value="#{electricitate.q}" styleClass="col-md-2" />
+				<h:commandButton value="Calculeaza" action="#{electricitate.tensiune()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{electricitate.tens}"
+					styleClass="col-md-3" />
+			</div>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="U: " styleClass="col-md-1" />
+				<h:inputText value="#{electricitate.u0}" styleClass="col-md-2" />
+				<h:outputLabel value="I: " styleClass="col-md-2" />
+				<h:inputText value="#{electricitate.i0}" styleClass="col-md-2" />
+				<h:commandButton value="Calculeaza" action="#{electricitate.rezistenta()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{electricitate.rez}"
+					styleClass="col-md-3" />
+			</div>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="U: " styleClass="col-md-1" />
+				<h:inputText value="#{electricitate.u1}" styleClass="col-md-2" />
+				<h:outputLabel value="I: " styleClass="col-md-2" />
+				<h:inputText value="#{electricitate.i1}" styleClass="col-md-2" />
+				<h:commandButton value="Calculeaza" action="#{electricitate.putere()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{electricitate.putere}"
+					styleClass="col-md-3" />
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>

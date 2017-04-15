@@ -1,0 +1,13 @@
+package mds.servicii;
+
+public class Electricitate {
+	
+	/*
+	 * tensiunea electrica
+	 * Lucru / sarcina
+	 */
+	public double tensiune(double l, double q) {
+		return l / q;
+	}
+
+}

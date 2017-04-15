@@ -1,0 +1,18 @@
+.centralDiv {
+	width: 500px;
+	background-color: #fff;
+	margin-left: 500px;
+	margin-right: 200px;
+	height: 500px;
+}
+
+.buttons {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.header {
+	font-size: 40px;
+	color: #000099;
+	text-align: center;
+}

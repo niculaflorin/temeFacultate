@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="http://localhost:8081/fizicianWS/services/TermoDinamica?wsdl"/>
+		<item value="http://localhost:8081/fizicianWS/services/Electricitate?wsdl"/>
+		<item value="http://localhost:8080/fizicianWS/services/Mecanica?wsdl"/>
+	</list>
+</section>

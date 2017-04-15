@@ -1,0 +1,55 @@
+!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body style="background-color: #8c8c8c">
+	<div class="col-md-12 col-md-offset-3 centralDiv">
+		<div class="row" style="text-align: center;">
+			<h:outputLabel value="Fizician" class="header" />
+		</div>
+		<h:form>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="Masa: " styleClass="col-md-1" />
+				<h:inputText value="#{termo.masa}" styleClass="col-md-2" />
+				<h:outputLabel value="Miu: " styleClass="col-md-2" />
+				<h:inputText value="#{termo.miu}" styleClass="col-md-2" />
+				<h:commandButton value="Calculeaza" action="#{termo.NumarMoli()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{termo.numarMoli}"
+					styleClass="col-md-3" />
+			</div>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="N: " styleClass="col-md-1" />
+				<h:inputText value="#{termo.n}" styleClass="col-md-1" />
+				<h:outputLabel value="Masa: " styleClass="col-md-1" />
+				<h:inputText value="#{termo.masa}" styleClass="col-md-1" />
+				<h:outputLabel value="Viteza: " styleClass="col-md-2" />
+				<h:inputText value="#{termo.viteza}" styleClass="col-md-1" />
+				<h:commandButton value="Calculeaza" action="#{termo.presiune()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{termo.presiune}"
+					styleClass="col-md-3" />
+			</div>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="N: " styleClass="col-md-1" />
+				<h:inputText value="#{termo.n}" styleClass="col-md-1" />
+				<h:outputLabel value="K: " styleClass="col-md-1" />
+				<h:inputText value="#{termo.k}" styleClass="col-md-1" />
+				<h:outputLabel value="Temp: " styleClass="col-md-2" />
+				<h:inputText value="#{termo.temp}" styleClass="col-md-1" />
+				<h:commandButton value="Calculeaza" action="#{termo.gaz_ideal()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{termo.gaz_ideal}"
+					styleClass="col-md-3" />
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>

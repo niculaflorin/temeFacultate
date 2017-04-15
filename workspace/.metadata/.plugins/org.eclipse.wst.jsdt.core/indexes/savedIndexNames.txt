@@ -1,0 +1,10 @@
+INDEX VERSION 1.3+/home/florin/Proiecte/MDS/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+4039858834.index
+3737385367.index
+2909657090.index
+3380315054.index
+1451913039.index
+83033758.index
+2034050364.index
+889814198.index
+4039858834.index

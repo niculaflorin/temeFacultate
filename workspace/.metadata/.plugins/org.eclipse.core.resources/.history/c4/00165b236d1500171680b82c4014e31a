@@ -1,0 +1,142 @@
+/**
+ * MecanicaLocator.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package mds.servicii;
+
+public class MecanicaLocator extends org.apache.axis.client.Service implements mds.servicii.Mecanica {
+
+    public MecanicaLocator() {
+    }
+
+
+    public MecanicaLocator(org.apache.axis.EngineConfiguration config) {
+        super(config);
+    }
+
+    public MecanicaLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+        super(wsdlLoc, sName);
+    }
+
+    // Use to get a proxy class for MecanicaHttpSoap11Endpoint
+    private java.lang.String MecanicaHttpSoap11Endpoint_address = "http://localhost:8080/fizicianWS/services/Mecanica.MecanicaHttpSoap11Endpoint/";
+
+    public java.lang.String getMecanicaHttpSoap11EndpointAddress() {
+        return MecanicaHttpSoap11Endpoint_address;
+    }
+
+    // The WSDD service name defaults to the port name.
+    private java.lang.String MecanicaHttpSoap11EndpointWSDDServiceName = "MecanicaHttpSoap11Endpoint";
+
+    public java.lang.String getMecanicaHttpSoap11EndpointWSDDServiceName() {
+        return MecanicaHttpSoap11EndpointWSDDServiceName;
+    }
+
+    public void setMecanicaHttpSoap11EndpointWSDDServiceName(java.lang.String name) {
+        MecanicaHttpSoap11EndpointWSDDServiceName = name;
+    }
+
+    public mds.servicii.MecanicaPortType getMecanicaHttpSoap11Endpoint() throws javax.xml.rpc.ServiceException {
+       java.net.URL endpoint;
+        try {
+            endpoint = new java.net.URL(MecanicaHttpSoap11Endpoint_address);
+        }
+        catch (java.net.MalformedURLException e) {
+            throw new javax.xml.rpc.ServiceException(e);
+        }
+        return getMecanicaHttpSoap11Endpoint(endpoint);
+    }
+
+    public mds.servicii.MecanicaPortType getMecanicaHttpSoap11Endpoint(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+        try {
+            mds.servicii.MecanicaSoap11BindingStub _stub = new mds.servicii.MecanicaSoap11BindingStub(portAddress, this);
+            _stub.setPortName(getMecanicaHttpSoap11EndpointWSDDServiceName());
+            return _stub;
+        }
+        catch (org.apache.axis.AxisFault e) {
+            return null;
+        }
+    }
+
+    public void setMecanicaHttpSoap11EndpointEndpointAddress(java.lang.String address) {
+        MecanicaHttpSoap11Endpoint_address = address;
+    }
+
+    /**
+     * For the given interface, get the stub implementation.
+     * If this service has no port for the given interface,
+     * then ServiceException is thrown.
+     */
+    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+        try {
+            if (mds.servicii.MecanicaPortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                mds.servicii.MecanicaSoap11BindingStub _stub = new mds.servicii.MecanicaSoap11BindingStub(new java.net.URL(MecanicaHttpSoap11Endpoint_address), this);
+                _stub.setPortName(getMecanicaHttpSoap11EndpointWSDDServiceName());
+                return _stub;
+            }
+        }
+        catch (java.lang.Throwable t) {
+            throw new javax.xml.rpc.ServiceException(t);
+        }
+        throw new javax.xml.rpc.ServiceException("There is no stub implementation for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndpointInterface.getName()));
+    }
+
+    /**
+     * For the given interface, get the stub implementation.
+     * If this service has no port for the given interface,
+     * then ServiceException is thrown.
+     */
+    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+        if (portName == null) {
+            return getPort(serviceEndpointInterface);
+        }
+        java.lang.String inputPortName = portName.getLocalPart();
+        if ("MecanicaHttpSoap11Endpoint".equals(inputPortName)) {
+            return getMecanicaHttpSoap11Endpoint();
+        }
+        else  {
+            java.rmi.Remote _stub = getPort(serviceEndpointInterface);
+            ((org.apache.axis.client.Stub) _stub).setPortName(portName);
+            return _stub;
+        }
+    }
+
+    public javax.xml.namespace.QName getServiceName() {
+        return new javax.xml.namespace.QName("http://servicii.mds", "Mecanica");
+    }
+
+    private java.util.HashSet ports = null;
+
+    public java.util.Iterator getPorts() {
+        if (ports == null) {
+            ports = new java.util.HashSet();
+            ports.add(new javax.xml.namespace.QName("http://servicii.mds", "MecanicaHttpSoap11Endpoint"));
+        }
+        return ports.iterator();
+    }
+
+    /**
+    * Set the endpoint address for the specified port name.
+    */
+    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        
+if ("MecanicaHttpSoap11Endpoint".equals(portName)) {
+            setMecanicaHttpSoap11EndpointEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        }
+    }
+
+    /**
+    * Set the endpoint address for the specified port name.
+    */
+    public void setEndpointAddress(javax.xml.namespace.QName portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        setEndpointAddress(portName.getLocalPart(), address);
+    }
+
+}

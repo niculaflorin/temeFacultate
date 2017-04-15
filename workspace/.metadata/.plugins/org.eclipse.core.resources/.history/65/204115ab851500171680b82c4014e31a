@@ -1,0 +1,124 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import mds.servicii.TermoDinamica;
+import mds.servicii.TermoDinamicaPortType;
+
+@ManagedBean(name = "termo")
+@ViewScoped
+public class TermoDinamicaBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8478182400570891304L;
+	
+	TermoDinamica term = new TermoDinamica();
+	
+	TermoDinamicaPortType port = term.getTermoDinamicaHttpSoap11Endpoint();
+	
+	private double masa;
+	
+	private double miu;
+	
+	private double n;
+	
+	private double viteza;
+	
+	private double k;
+	
+	private double temp;
+	
+	private double numarMoli;
+	
+	private double presiune;
+	
+	private double gaz_ideal;
+	
+	public void numarMoli() {
+		numarMoli = port.moli(masa, miu);
+	}
+	
+	public void presiune() {
+		
+	}
+
+	public double getMasa() {
+		return masa;
+	}
+
+	public void setMasa(double masa) {
+		this.masa = masa;
+	}
+
+	public double getMiu() {
+		return miu;
+	}
+
+	public void setMiu(double miu) {
+		this.miu = miu;
+	}
+
+	public double getN() {
+		return n;
+	}
+
+	public void setN(double n) {
+		this.n = n;
+	}
+
+	public double getViteza() {
+		return viteza;
+	}
+
+	public void setViteza(double viteza) {
+		this.viteza = viteza;
+	}
+
+	public double getK() {
+		return k;
+	}
+
+	public void setK(double k) {
+		this.k = k;
+	}
+
+	public double getTemp() {
+		return temp;
+	}
+
+	public void setTemp(double temp) {
+		this.temp = temp;
+	}
+
+	public double getNumarMoli() {
+		return numarMoli;
+	}
+
+	public void setNumarMoli(double numarMoli) {
+		this.numarMoli = numarMoli;
+	}
+
+	public double getPresiune() {
+		return presiune;
+	}
+
+	public void setPresiune(double presiune) {
+		this.presiune = presiune;
+	}
+
+	public double getGaz_ideal() {
+		return gaz_ideal;
+	}
+
+	public void setGaz_ideal(double gaz_ideal) {
+		this.gaz_ideal = gaz_ideal;
+	}
+	
+
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body style="background-color: #8c8c8c">
+	<div class="col-md-12 col-md-offset-3 centralDiv">
+		<div class="row" style="text-align: center;">
+			<h:outputLabel value="Fizician" class="header" />
+		</div>
+		<h:form>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="Masa: " styleClass="col-md-1" />
+				<h:inputText value="#{mecanica.masa}" styleClass="col-md-2" />
+				<h:outputLabel value="Accelartia: " styleClass="col-md-2" />
+				<h:inputText value="#{mecanica.accelaratia}" styleClass="col-md-2" />
+				<h:commandButton value="Calculeaza" action="#{mecanica.calcForta()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{mecanica.forta}"
+					styleClass="col-md-3" />
+			</div>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="K: " styleClass="col-md-1" />
+				<h:inputText value="#{mecanica.k}" styleClass="col-md-2" />
+				<h:outputLabel value="X: " styleClass="col-md-2" />
+				<h:inputText value="#{mecanica.x}" styleClass="col-md-2" />
+				<h:commandButton value="Calculeaza" action="#{mecanica.calcFortaElastica()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{mecanica.fortaElsatica}"
+					styleClass="col-md-3" />
+			</div>
+			<div class="col-md-12 form-group">
+				<h:outputLabel value="Miu: " styleClass="col-md-1" />
+				<h:inputText value="#{mecanica.miu}" styleClass="col-md-1" />
+				<h:outputLabel value="Masa: " styleClass="col-md-2" />
+				<h:inputText value="#{mecanica.masa}" styleClass="col-md-1" />
+				<h:outputLabel value="G: " styleClass="col-md-1" />
+				<h:inputText value="#{mecanica.g}" styleClass="col-md-1" />
+				<h:commandButton value="Calculeaza" action="#{mecanica.calcFortaFrecare()}"
+					styleClass="col-md-2" />
+				<h:outputLabel value="Rezultat : #{mecanica.fortaElsatica}"
+					styleClass="col-md-3" />
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>

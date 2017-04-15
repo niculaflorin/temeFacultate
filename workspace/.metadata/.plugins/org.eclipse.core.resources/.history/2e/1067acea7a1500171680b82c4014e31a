@@ -1,0 +1,95 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import mds.servicii.Mecanica;
+import mds.servicii.MecanicaPortType;
+
+@ManagedBean(name = "mecanica")
+@ViewScoped
+public class MecanicaBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -550396060199753172L;
+	
+	Mecanica mec = new Mecanica();
+	
+	MecanicaPortType port1 = mec.getMecanicaHttpSoap11Endpoint();
+	
+	
+	private double masa;
+	
+	private double accelaratia;
+	
+	private double forta = 0;
+	
+	private double x;
+	
+	private double k;
+	
+	private double fortaElsatica;
+	
+	public void calcForta() {
+		System.out.println(masa);
+		System.out.println(accelaratia);
+		System.out.println("port " + port1.getForta(masa, accelaratia));
+		forta = port1.getForta(masa, accelaratia);
+	}
+	
+	public void calcFortaElastica() {
+		fortaElsatica = port1.getFortaElastica(k, x);
+	}
+
+	public double getMasa() {
+		return masa;
+	}
+
+	public void setMasa(double masa) {
+		this.masa = masa;
+	}
+
+	public double getAccelaratia() {
+		return accelaratia;
+	}
+
+	public void setAccelaratia(double accelaratia) {
+		this.accelaratia = accelaratia;
+	}
+
+	public double getForta() {
+		return forta;
+	}
+
+	public void setForta(double forta) {
+		this.forta = forta;
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getK() {
+		return k;
+	}
+
+	public void setK(double k) {
+		this.k = k;
+	}
+
+	public double getFortaElsatica() {
+		return fortaElsatica;
+	}
+
+	public void setFortaElsatica(double fortaElsatica) {
+		this.fortaElsatica = fortaElsatica;
+	}
+}

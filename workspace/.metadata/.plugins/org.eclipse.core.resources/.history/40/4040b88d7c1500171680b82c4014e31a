@@ -1,0 +1,6 @@
+package mds.servicii.clientsample;
+
+import mds.servicii.*;
+
+public class ClientSample {
+}

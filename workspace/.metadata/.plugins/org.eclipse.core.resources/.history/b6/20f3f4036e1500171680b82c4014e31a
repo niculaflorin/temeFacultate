@@ -1,0 +1,32 @@
+package mds.proiect;
+
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import mds.servicii.MecanicaPortType;
+
+@ManagedBean(name = "mecanica")
+@ViewScoped
+public class ManagerBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -550396060199753172L;
+	
+	mds.servicii.Mecanica mec = new mds.servicii.Mecanica();
+	
+	MecanicaPortType port1 = service1.getMecanicaHttpSoap11Endpoint();
+
+	public String ceav = "asdas";
+
+	public String getCeav() {
+		return ceav;
+	}
+
+	public void setCeav(String ceav) {
+		this.ceav = ceav;
+	}
+}
